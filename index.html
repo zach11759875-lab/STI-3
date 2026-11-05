@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXUS MED-ID</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;background:#eef2f7;color:#172033;
+  font-family:Arial,sans-serif
+}
+header{
+  background:#101c35;color:white;padding:22px 18px
+}
+header small{color:#b9c9e7;letter-spacing:2px}
+header h1{margin:8px 0;font-size:27px}
+main{max-width:620px;margin:20px auto;padding:0 14px}
+.card{
+  background:white;border-radius:16px;padding:18px;
+  margin-bottom:14px;box-shadow:0 4px 18px #14213d12
+}
+.label{font-size:12px;font-weight:bold;color:#64748b}
+.alert{
+  border-left:5px solid #dc2626;
+  background:#fff1f2;padding:14px;border-radius:8px
+}
+.warning{color:#b91c1c;font-weight:bold}
+button{
+  border:0;border-radius:10px;padding:14px;
+  width:100%;font-weight:bold;font-size:15px;
+  margin-top:9px;cursor:pointer
+}
+.primary{background:#b91c1c;color:white}
+.secondary{background:#e8eef8;color:#172033}
+li{margin:12px 0;line-height:1.4}
+footer{text-align:center;color:#64748b;font-size:12px;padding:20px}
+</style>
+</head>
+<body>
+<header>
+  <small>NEXUS • SCHOOL SAFETY</small>
+  <h1>MED-ID <span style="color:#fb7185">/</span> Emergency Profile</h1>
+  <div>Rapid medical information access</div>
+</header>
+
+<main>
+  <div class="card">
+    <div class="label">DEMONSTRATION RECORD</div>
+    <h2>Student DEMO-001</h2>
+    <p>Profile status: <b>Fictional test data</b></p>
+    <p class="label">LAST UPDATED: 22 OCT 2026</p>
+  </div>
+
+  <div class="card alert">
+    <div class="warning">⚠ CRITICAL MEDICAL ALERT</div>
+    <h3>Fictional allergy: Peanuts</h3>
+    <p>Inform the responsible school staff and follow
+    the student's established emergency plan.</p>
+  </div>
+
+  <div class="card">
+    <div class="label">MEDICAL INFORMATION</div>
+    <h3>Fictional condition: Asthma</h3>
+    <p>Follow the student's documented emergency plan.
+    Do not diagnose or delay urgent medical care.</p>
+  </div>
+
+  <div class="card">
+    <h3>Emergency response checklist</h3>
+    <ol>
+      <li>Check scene safety and responsiveness.</li>
+      <li>Alert the school nurse or responsible staff.</li>
+      <li>Contact local emergency services when needed.</li>
+      <li>Follow trained first-aid guidance.</li>
+    </ol>
+    <p class="label">This checklist supports, not replaces, training.</p>
+  </div>
+
+  <div class="card">
+    <h3>Emergency contact</h3>
+    <p>Fictional guardian: 012-000 0000</p>
+    <button class="primary" onclick="contactDemo()">
+      CONTACT GUARDIAN (DEMO)
+    </button>
+    <button class="secondary" onclick="recordAccess()">
+      RECORD DEMO ACCESS
+    </button>
+    <p id="status" role="status" aria-live="polite">
+      Demo ready.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Access event log</h3>
+    <p id="log">No demo events recorded yet.</p>
+    <button class="secondary" onclick="clearLog()">
+      Clear demo log
+    </button>
+  </div>
+</main>
+
+<footer>
+  NEXUS MED-ID • SCIENCE FAIR PROTOTYPE<br>
+  Fictional data only • Not a clinical system
+</footer>
+
+<script>
+function contactDemo(){
+  document.getElementById("status").textContent =
+    "Simulation only: no message or call was sent.";
+}
+function recordAccess(){
+  const time = new Date().toLocaleTimeString();
+  document.getElementById("log").textContent =
+    "Demo profile accessed at " + time;
+  document.getElementById("status").textContent =
+    "Demo access event recorded on this page.";
+}
+function clearLog(){
+  document.getElementById("log").textContent =
+    "No demo events recorded yet.";
+  document.getElementById("status").textContent =
+    "Demo log cleared.";
+}
+</script>
+</body>
+</html>
